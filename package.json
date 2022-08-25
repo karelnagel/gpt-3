@@ -1,8 +1,10 @@
 {
   "name": "gpt3",
-  "displayName": "gpt3",
-  "description": "Gpt3 in vscode",
-  "version": "0.0.1",
+  "displayName": "GPT-3",
+  "publisher": "KarelNagel",
+  "description": "OpenAI GPT-3 in vscode",
+  "repository": "https://github.com/karelnagel/gpt-3",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.70.0"
   },
@@ -63,7 +65,9 @@
     "watch": "tsc -watch -p ./",
     "pretest": "yarn run compile && yarn run lint",
     "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js"
+    "test": "node ./out/test/runTest.js",
+    "package": "yarn compile && vsce package",
+    "marketplace": "yarn package && vsce publish minor"
   },
   "devDependencies": {
     "@types/glob": "^7.2.0",
