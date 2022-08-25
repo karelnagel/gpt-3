@@ -1,0 +1,84 @@
+{
+  "name": "gpt3",
+  "displayName": "gpt3",
+  "description": "Gpt3 in vscode",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:gpt3.complete"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "gpt3.complete",
+        "title": "GPT3 complete"
+      }
+    ],
+    "keybindings": [
+      {
+        "key": "ctrl+cmd+g",
+        "command": "gpt3.complete"
+      }
+    ],
+    "configuration": {
+      "title": "gpt3",
+      "properties": {
+        "gpt3.apiKey": {
+          "type": "string",
+          "description": "API key from Open AI",
+          "default": ""
+        },
+        "gpt3.model": {
+          "type": "string",
+          "description": "GPT-3 model",
+          "default": "text-davinci-002"
+        },
+        "gpt3.maxTokens": {
+          "type": "number",
+          "description": "Max tokens",
+          "default": 600
+        },
+        "gpt3.temperature": {
+          "type": "number",
+          "description": "Temperature (0-1)",
+          "default": 1
+        },
+        "gpt3.replace": {
+          "type": "boolean",
+          "description": "Replace input text",
+          "default": false
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.70.0",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "@vscode/test-electron": "^2.1.5",
+    "eslint": "^8.20.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.0.0",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "openai": "^3.0.0"
+  }
+}
