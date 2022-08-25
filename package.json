@@ -44,12 +44,12 @@
         "gpt3.maxTokens": {
           "type": "number",
           "description": "Max tokens",
-          "default": 600
+          "default": 6
         },
         "gpt3.temperature": {
           "type": "number",
-          "description": "Temperature (0-1)",
-          "default": 1
+          "description": "Temperature",
+          "default": 0
         },
         "gpt3.replace": {
           "type": "boolean",

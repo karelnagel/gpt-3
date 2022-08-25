@@ -14,7 +14,6 @@ export function activate(context: vscode.ExtensionContext) {
 	console.log('Congratulations, your extension "gpt3" is now active!');
 
 	let disposable = vscode.commands.registerCommand('gpt3.complete', async () => {
-		vscode.window.showInformationMessage('Hello Worldadsfasdf from gpt3!');
 
 		const editor = vscode.window.activeTextEditor;
 		if (!editor) {
