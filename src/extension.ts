@@ -3,8 +3,8 @@ import { Configuration, OpenAIApi } from "openai";
 
 const getConf = <T = string>(key: string) => vscode.workspace.getConfiguration('gpt3').get(key) as T;
 
-const apiKey = getConf<string>("apiKey")
-const model = getConf<string>("model")
+const apiKey = getConf<string>("apiKey");
+const model = getConf<string>("model");
 const replace = getConf<boolean>("replace");
 const temperature = getConf<number>("temperature");
 const max_tokens = getConf<number>("maxTokens");
