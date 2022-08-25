@@ -4,7 +4,7 @@
   "publisher": "KarelNagel",
   "description": "OpenAI GPT-3 in vscode",
   "repository": "https://github.com/karelnagel/gpt-3",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.70.0"
   },
