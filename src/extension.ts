@@ -27,7 +27,7 @@ export function activate(context: vscode.ExtensionContext) {
 		const replace = getConf<boolean>("replace");
 		const temperature = getConf<number>("temperature");
 		const max_tokens = getConf<number>("maxTokens");
-		
+
 		const openai = new OpenAIApi(new Configuration({ apiKey }));
 		const response = await openai.createCompletion({
 			model,
@@ -36,7 +36,7 @@ export function activate(context: vscode.ExtensionContext) {
 			max_tokens
 		});
 
-		const result = response.data.choices ? response.data?.choices[0].text ?? "" : "";
+		const result = response.data.choices?.[0]?.text?.replace(/\</g, "&lt;")?.replace(/\>/g, "&gt;") || "";
 		vscode.window.showInformationMessage("Success");
 
 		editor.edit(edit => {
